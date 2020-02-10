@@ -10,11 +10,11 @@ tensorflow2-study
 # 케글 데이터 셋
 # https://www.kaggle.com/datasets
 
+# Pathmind 데이터셋 | 
+# https://pathmind.com/kr/wiki/open-datasets
+
 # 위키 데이터셋
 # https://en.wikipedia.org/wiki/List_of_datasets_for_machine-learning_research
-
-# 공개 데이터셋 | Pathmind
-# https://pathmind.com/kr/wiki/open-datasets
 
 # 구글 데이터셋
 # ㅍhttps://cloud.google.com/public-datasets/?hl=ko
