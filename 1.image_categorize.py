@@ -1,5 +1,6 @@
 #-*- coding:utf-8 -*-
 # https://www.tensorflow.org/tutorials/keras/classification?hl=ko
+# 첫 번째 신경망 훈련하기: 기초적인 분류 문제
 
 from __future__ import absolute_import, division, print_function, unicode_literals, unicode_literals
 
