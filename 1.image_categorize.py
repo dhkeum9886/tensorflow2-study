@@ -1,4 +1,5 @@
 #-*- coding:utf-8 -*-
+# https://www.tensorflow.org/tutorials/keras/classification?hl=ko
 
 from __future__ import absolute_import, division, print_function, unicode_literals, unicode_literals
 
