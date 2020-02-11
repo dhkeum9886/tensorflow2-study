@@ -68,3 +68,30 @@ if __name__ == '__main__':
 
     print ('after padding, before decode\r\n', train_data[0])
     print ('after padding, after decode\r\n', decode_review(train_data[0]))
+
+    # 입력 크기는 영화 리뷰 데이터셋에 적용된 어휘 사전의 크기입니다(10,000개의 단어)
+    vocab_size = 10000
+
+    model = keras.Sequential()
+
+    # Embedding 층.
+    # 이 층은 정수로 인코딩된 단어를 입력 받고 각 단어 인덱스에 해당하는 임베딩 벡터를 찾습니다.
+    # 이 벡터는 모델이 훈련되면서 학습됩니다.
+    # 이 벡터는 출력 배열에 새로운 차원으로 추가됩니다.
+    # 최종 차원은 (batch, sequence, embedding)이 됩니다.
+    model.add(keras.layers.Embedding(vocab_size, 16, input_shape=(None,)))
+
+    # GlobalAveragePooling1D 층
+    # sequence 차원에 대해 평균을 계산하여 각 샘플에 대해 고정된 길이의 출력 벡터를 반환합니다.
+    # 이는 길이가 다른 입력을 다루는 가장 간단한 방법입니다.
+    model.add(keras.layers.GlobalAveragePooling1D())
+
+    # 이 고정 길이의 출력 벡터는 16개의 은닉 유닛을 가진 완전 연결(fully-connected) 층(Dense)을 거칩니다.
+    model.add(keras.layers.Dense(16, activation='relu'))
+
+    # 하나의 출력 노드(node)를 가진 완전 연결 층입니다.
+    # sigmoid 활성화 함수를 사용하여 0과 1 사이의 실수를 출력합니다.
+    # 이 값은 확률 또는 신뢰도를 나타냅니다.
+    model.add(keras.layers.Dense(1, activation='sigmoid'))
+
+    model.summary()
