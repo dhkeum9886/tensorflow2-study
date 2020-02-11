@@ -19,3 +19,7 @@ if __name__ == '__main__':
     # IMDB 데이터셋 다운로드
     imdb = keras.datasets.imdb
     (train_data, train_labels), (test_data, test_labels) = imdb.load_data(num_words=10000)
+
+    print("훈련 샘플: {}, 레이블: {}".format(len(train_data), len(train_labels)))
+
+    print(train_data[0])
