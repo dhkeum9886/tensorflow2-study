@@ -66,6 +66,7 @@ if __name__ == '__main__':
                    'Sandal', 'Shirt', 'Sneaker', 'Bag', 'Ankle boot']
 
     # train_images[0] 이미지 보기.
+    print('train_images[0]', train_images[0])
     # plt.figure()
     # plt.imshow(train_images[0])
     # plt.colorbar()
@@ -138,17 +139,17 @@ if __name__ == '__main__':
     # plot_value_array(i, predictions, test_labels)
     # plt.show()
 
-    # 여러 이미지의 예측.
-    num_rows = 5
-    num_cols = 3
-    num_images = num_rows * num_cols
-    plt.figure(figsize=(2 * 2 * num_cols, 2 * num_rows))
-    for i in range(num_images):
-        plt.subplot(num_rows, 2 * num_cols, 2 * i + 1)
-        plot_image(i, predictions, test_labels, test_images)
-        plt.subplot(num_rows, 2 * num_cols, 2 * i + 2)
-        plot_value_array(i, predictions, test_labels)
-    plt.show()
+    # # 여러 이미지의 예측.
+    # num_rows = 5
+    # num_cols = 3
+    # num_images = num_rows * num_cols
+    # plt.figure(figsize=(2 * 2 * num_cols, 2 * num_rows))
+    # for i in range(num_images):
+    #     plt.subplot(num_rows, 2 * num_cols, 2 * i + 1)
+    #     plot_image(i, predictions, test_labels, test_images)
+    #     plt.subplot(num_rows, 2 * num_cols, 2 * i + 2)
+    #     plot_value_array(i, predictions, test_labels)
+    # plt.show()
 
     # # 랜덤 넘버 생성. 해당 이미지의 예측.
     # randomindex = random.randint(1, 10)
