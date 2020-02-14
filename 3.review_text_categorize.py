@@ -95,3 +95,70 @@ if __name__ == '__main__':
     model.add(keras.layers.Dense(1, activation='sigmoid'))
 
     model.summary()
+
+
+    model.compile(optimizer='adam',             # 옵티마이저
+                  loss='binary_crossentropy',   # 손실함수
+                  metrics=['accuracy'])
+
+
+    # 검증 세트.
+    x_val = train_data[:10000]
+    partial_x_train = train_data[10000:]
+
+    y_val = train_labels[:10000]
+    partial_y_train = train_labels[10000:]
+
+    # 모델 훈련.
+    history = model.fit(partial_x_train,
+                        partial_y_train,
+                        epochs=40,
+                        batch_size=512,
+                        validation_data=(x_val, y_val),
+                        verbose=1)
+
+    # 모델 평가
+    results = model.evaluate(test_data, test_labels, verbose=2)
+
+    print(results)
+
+    # 정확도와 손실 그래프 그리기
+    history_dict = history.history
+    history_dict.keys()
+
+    # dict_keys(['loss', 'accuracy', 'val_loss', 'val_accuracy'])
+
+    import matplotlib.pyplot as plt
+
+    acc = history_dict['accuracy']
+    val_acc = history_dict['val_accuracy']
+    loss = history_dict['loss']
+    val_loss = history_dict['val_loss']
+
+    epochs = range(1, len(acc) + 1)
+
+    # "bo"는 "파란색 점"입니다
+    plt.plot(epochs, loss, 'bo', label='Training loss')
+    # b는 "파란 실선"입니다
+    plt.plot(epochs, val_loss, 'b', label='Validation loss')
+    plt.title('Training and validation loss')
+    plt.xlabel('Epochs')
+    plt.ylabel('Loss')
+    plt.legend()
+
+    plt.show()
+
+    plt.clf()  # 그림을 초기화합니다
+
+    plt.plot(epochs, acc, 'bo', label='Training acc')
+    plt.plot(epochs, val_acc, 'b', label='Validation acc')
+    plt.title('Training and validation accuracy')
+    plt.xlabel('Epochs')
+    plt.ylabel('Accuracy')
+    plt.legend()
+
+    plt.show()
+
+
+
+
