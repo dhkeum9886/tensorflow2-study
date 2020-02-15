@@ -151,13 +151,13 @@ if __name__ == '__main__':
     #     plot_value_array(i, predictions, test_labels)
     # plt.show()
 
-    # # 랜덤 넘버 생성. 해당 이미지의 예측.
-    # randomindex = random.randint(1, 10)
-    # print('random index : ', randomindex)
-    #
-    # img = test_images[randomindex]
-    # img = (np.expand_dims(img, 0))
-    # predictions_single = model.predict(img)
-    # plot_value_array(0, predictions_single, test_labels)
-    # _ = plt.xticks(range(10), class_names, rotation=45)
-    # print (np.argmax(predictions_single[0]))
+    # 랜덤 넘버 생성. 해당 이미지의 예측.
+    randomindex = random.randint(1, 10)
+    print('random index : ', randomindex)
+
+    img = test_images[randomindex]
+    img = (np.expand_dims(img, 0))
+    predictions_single = model.predict(img)
+    plot_value_array(0, predictions_single, test_labels)
+    _ = plt.xticks(range(10), class_names, rotation=45)
+    print ('예측 : ', np.argmax(predictions_single[0]), '정답 : ', test_labels[randomindex])
