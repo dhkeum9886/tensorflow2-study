@@ -17,7 +17,7 @@ tensorflow2-study
 # https://en.wikipedia.org/wiki/List_of_datasets_for_machine-learning_research
 
 # 구글 데이터셋
-# ㅍhttps://cloud.google.com/public-datasets/?hl=ko
+# https://cloud.google.com/public-datasets/?hl=ko
 
 # 기상청 데이터셋
 # https://data.kma.go.kr/cmmn/main.do
